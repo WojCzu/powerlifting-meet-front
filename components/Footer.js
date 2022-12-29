@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
-import EmailIcon from "@/icons/icon-email.svg";
+import EmailIcon from "@/icons/email.svg";
 import styles from "@/styles/Footer.module.css";
 
 const Footer = () => {

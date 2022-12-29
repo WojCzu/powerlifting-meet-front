@@ -1,6 +1,6 @@
 import Link from "next/link";
-import styles from "@/styles/Header.module.css";
 import Logo from "@/components/Logo";
+import styles from "@/styles/Header.module.css";
 
 const Header = () => {
   const user = false; //TODO: connect with database

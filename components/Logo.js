@@ -1,5 +1,5 @@
 import Link from "next/link";
-import DumbbellIcon from "@/icons/icon-dumbbell.svg";
+import DumbbellIcon from "@/icons/dumbbell.svg";
 import styles from "@/styles/Logo.module.css";
 
 const Logo = () => (

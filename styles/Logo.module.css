@@ -1,0 +1,13 @@
+.logo {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-big);
+  line-height: var(--letter-height-extra-big);
+  letter-spacing: var(--letter-spacing-regular);
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  text-transform: uppercase;
+}

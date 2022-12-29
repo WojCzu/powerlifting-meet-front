@@ -1,0 +1,44 @@
+.header {
+  padding: 24px 0;
+
+  background-color: var(--primary-900);
+  color: var(--neutral-50);
+
+  font-weight: var(--font-weight-extra-light);
+  font-size: var(--font-size-sub-regular);
+  line-height: var(--letter-height-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 56px;
+  list-style: none;
+}
+.header button {
+  background-color: transparent;
+  border: none;
+  color: var(--neutral-50);
+
+  font-weight: var(--font-weight-extra-light);
+  font-size: var(--font-size-sub-regular);
+  line-height: var(--letter-height-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}
+
+.header a:hover,
+.header button:hover {
+  color: var(--neutral-200);
+}

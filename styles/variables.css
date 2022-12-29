@@ -71,4 +71,7 @@
   --highlight-focus: 0 0 0 1.5px var(--primary-100);
   --highlight-success: 0 0 0 1.5px var(--success-light);
   --highlight-error: 0 0 0 1.5px var(--error-light);
+
+  /* widths */
+  --max-width: 1310px;
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import DumbbellIcon from "/public/icons/icon-dumbbell.svg";
-import styles from "../styles/Logo.module.css";
+import DumbbellIcon from "@/icons/icon-dumbbell.svg";
+import styles from "@/styles/Logo.module.css";
 
 const Logo = () => (
   <div className={styles.logo}>

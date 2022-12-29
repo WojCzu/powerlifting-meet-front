@@ -1,8 +1,9 @@
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
-import Logo from "./Logo";
+import styles from "@/styles/Header.module.css";
+import Logo from "@/components/Logo";
 
 const Header = () => {
+  const user = false; //TODO: connect with database
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -12,15 +13,7 @@ const Header = () => {
             <li>
               <Link href={"/meets"}>Zawody</Link>
             </li>
-            <li>
-              <Link href={"/meets/my"}>Moje zawody</Link>
-            </li>
-            <li>
-              <Link href={"/calendar"}>Mój kalendarz</Link>
-            </li>
-            <li>
-              <button>Wyloguj</button>
-            </li>
+            {user ? <AuthenticatedRoutes /> : <UnAuthenticatedRoutes />}
           </ul>
         </nav>
       </div>
@@ -29,3 +22,30 @@ const Header = () => {
 };
 
 export default Header;
+
+const AuthenticatedRoutes = () => (
+  <>
+    <li>
+      <Link href={"/account/meets"}>Moje zawody</Link>
+    </li>
+    <li>
+      <Link href={"/account/calendar"}>Mój kalendarz</Link>
+    </li>
+    <li>
+      <button>Wyloguj</button>
+    </li>
+  </>
+);
+
+const UnAuthenticatedRoutes = () => (
+  <>
+    <li>
+      <Link href={"/account/login"}>Zaloguj się</Link>
+    </li>
+    <li>
+      <Link href={"/account/register"} className='btn'>
+        Zarejestruj się
+      </Link>
+    </li>
+  </>
+);

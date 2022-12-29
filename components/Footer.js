@@ -1,9 +1,10 @@
 import Link from "next/link";
-import Logo from "./Logo";
-import EmailIcon from "../public/icons/icon-email.svg";
-import styles from "../styles/Footer.module.css";
+import Logo from "@/components/Logo";
+import EmailIcon from "@/icons/icon-email.svg";
+import styles from "@/styles/Footer.module.css";
 
 const Footer = () => {
+  const user = false; //TODO: connect with database
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -28,12 +29,7 @@ const Footer = () => {
               <li>
                 <Link href={"/meets"}>Zawody</Link>
               </li>
-              <li>
-                <Link href={"/meets/my"}>Moje zawody</Link>
-              </li>
-              <li>
-                <Link href={"/calendar"}>Mój kalendarz</Link>
-              </li>
+              {user ? <AuthenticatedRoutes /> : <UnAuthenticatedRoutes />}
             </ul>
           </nav>
         </div>
@@ -43,3 +39,25 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const AuthenticatedRoutes = () => (
+  <>
+    <li>
+      <Link href={"/account/meets"}>Moje zawody</Link>
+    </li>
+    <li>
+      <Link href={"/account/calendar"}>Mój kalendarz</Link>
+    </li>
+  </>
+);
+
+const UnAuthenticatedRoutes = () => (
+  <>
+    <li>
+      <Link href={"/account/login"}>Zaloguj się</Link>
+    </li>
+    <li>
+      <Link href={"/account/register"}>Zarejestruj się</Link>
+    </li>
+  </>
+);

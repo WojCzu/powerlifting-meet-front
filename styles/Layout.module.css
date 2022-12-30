@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
   width: min(100%, var(--max-width));
-  padding: 30px;
+  padding: 56px 30px;
   flex-grow: 1;
 }
 .layout {

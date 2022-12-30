@@ -1,5 +1,6 @@
 :root {
   /* typography */
+  --font-size-display: 24px;
   --font-size-big: 20px;
   --font-size-regular: 16px;
   --font-size-sub-regular: 15px;
@@ -14,6 +15,7 @@
   --font-weight-extra-light: 200;
 
   --letter-height-extra-big: 36px;
+  --letter-height-display: 32px;
   --letter-height-big: 24px;
   --letter-height-regular: 20px;
   --letter-height-small: 16px;

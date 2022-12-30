@@ -1,9 +1,13 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import styles from "@/styles/Header.module.css";
+import { useRouter } from "next/router";
+import Showcase from "./Showcase";
 
 const Header = () => {
+  const router = useRouter();
   const user = false; //TODO: connect with database
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -17,6 +21,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      {router.pathname === "/" && <Showcase />}
     </header>
   );
 };

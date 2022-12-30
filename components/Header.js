@@ -13,18 +13,20 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <Logo />
-        <nav>
-          <ul>
-            <li>
-              <Link href={"/meets"}>Zawody</Link>
-            </li>
-            {user ? (
-              <AuthenticatedRoutes logout={logout} />
-            ) : (
-              <UnAuthenticatedRoutes />
-            )}
-          </ul>
-        </nav>
+        {!["/account/login", "/account/register"].includes(router.pathname) && (
+          <nav>
+            <ul>
+              <li>
+                <Link href={"/meets"}>Zawody</Link>
+              </li>
+              {user ? (
+                <AuthenticatedRoutes logout={logout} />
+              ) : (
+                <UnAuthenticatedRoutes />
+              )}
+            </ul>
+          </nav>
+        )}
       </div>
       {router.pathname === "/" && <Showcase />}
     </header>

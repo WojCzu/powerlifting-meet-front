@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import styles from "@/styles/Layout.module.css";
 
-const Layout = ({ title, keywords, description, children }) => {
+const Layout = ({ title, keywords, description, className, children }) => {
   return (
     <div className={styles.layout}>
       <Head>
@@ -12,7 +12,9 @@ const Layout = ({ title, keywords, description, children }) => {
         <meta name='keywords' content={keywords} />
       </Head>
       <Header />
-      <main className={styles.container}>{children}</main>
+      <main className={`${styles.main} ${className === "bg" ? styles.bg : ""}`}>
+        <div className={styles.container}>{children}</div>
+      </main>
       <Footer />
     </div>
   );
@@ -24,6 +26,7 @@ Layout.defaultProps = {
     "Znajdź najbliższe zawody trójboju siłowegom, wszystkie najważniejsze wydarzenia trójbojowe w jednym miejscu",
   keywords:
     "powerlifting, powerlifting meets, bench press, deadlift, squat, competition, trójbój, wyciskanie leżąc, martwy ciąg, zawody",
+  className: "",
 };
 
 export default Layout;

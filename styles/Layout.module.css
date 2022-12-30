@@ -2,8 +2,36 @@
   margin: 0 auto;
   width: min(100%, var(--max-width));
   padding: 56px 30px;
+}
+.main {
   flex-grow: 1;
 }
+.main.bg {
+  background-image: url("../public/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.main.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary-900);
+  opacity: 80%;
+}
+
+.main.bg * {
+  z-index: 20;
+}
+
 .layout {
   min-height: 100vh;
   display: flex;

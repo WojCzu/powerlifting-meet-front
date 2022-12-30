@@ -5,7 +5,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import Layout from "@/components/Layout";
 import Input from "@/components/Input";
-import styles from "@/styles/Login.module.css";
+import styles from "@/styles/Register.module.css";
 
 const RegisterPage = () => {
   const router = useRouter();

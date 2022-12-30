@@ -17,6 +17,8 @@
 
 .content h1 {
   font-weight: var(--font-weight-regular);
+  width: 120%;
+  margin-left: -10%;
 }
 .content ul {
   display: flex;

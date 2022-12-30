@@ -1,0 +1,5 @@
+:root {
+  --toastify-color-error: var(--secondary-500);
+  --toastify-color-dark: var(--primary-900);
+  --toastify-text-color-dark: var(--neutral-50);
+}

@@ -1,10 +1,11 @@
-import Layout from "@/components/Layout";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAuth } from "@/hooks/useAuth";
 import { useState } from "react";
-import styles from "@/styles/Login.module.css";
+import { toast } from "react-toastify";
+import Layout from "@/components/Layout";
 import Input from "@/components/Input";
+import styles from "@/styles/Login.module.css";
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -16,12 +17,12 @@ const RegisterPage = () => {
 
   const handleRegister = e => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Hasła muszą być takie same");
+    if (!username || !email || !password || !confirmPassword) {
+      toast.error("Wypełnij wszystkie pola");
       return;
     }
-    if (!username || !email || !password || !confirmPassword) {
-      alert("Wypełnij wszystkie pola");
+    if (password !== confirmPassword) {
+      toast.error("Hasła muszą być takie same");
       return;
     }
     register({ username, email, password });

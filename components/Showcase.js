@@ -1,8 +1,9 @@
-import styles from "@/styles/Showcase.module.css";
 import Link from "next/link";
+import { useAuth } from "@/hooks/useAuth";
+import styles from "@/styles/Showcase.module.css";
 
 const Showcase = () => {
-  const user = false;
+  const { user } = useAuth();
   return (
     <div className={styles.showcase}>
       <div className={styles.container}>

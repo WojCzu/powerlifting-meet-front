@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useAuth } from "@/hooks/useAuth";
 import Logo from "@/components/Logo";
 import styles from "@/styles/Header.module.css";
 import { useRouter } from "next/router";
@@ -6,7 +7,7 @@ import Showcase from "./Showcase";
 
 const Header = () => {
   const router = useRouter();
-  const user = false; //TODO: connect with database
+  const { user, logout } = useAuth();
 
   return (
     <header className={styles.header}>
@@ -17,7 +18,11 @@ const Header = () => {
             <li>
               <Link href={"/meets"}>Zawody</Link>
             </li>
-            {user ? <AuthenticatedRoutes /> : <UnAuthenticatedRoutes />}
+            {user ? (
+              <AuthenticatedRoutes logout={logout} />
+            ) : (
+              <UnAuthenticatedRoutes />
+            )}
           </ul>
         </nav>
       </div>
@@ -28,7 +33,7 @@ const Header = () => {
 
 export default Header;
 
-const AuthenticatedRoutes = () => (
+const AuthenticatedRoutes = ({ logout }) => (
   <>
     <li>
       <Link href={"/account/meets"}>Moje zawody</Link>
@@ -37,7 +42,7 @@ const AuthenticatedRoutes = () => (
       <Link href={"/account/calendar"}>Mój kalendarz</Link>
     </li>
     <li>
-      <button>Wyloguj</button>
+      <button onClick={logout}>Wyloguj</button>
     </li>
   </>
 );

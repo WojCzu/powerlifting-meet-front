@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { useAuth } from "@/hooks/useAuth";
 import Logo from "@/components/Logo";
 import EmailIcon from "@/icons/email.svg";
 import styles from "@/styles/Footer.module.css";
 
 const Footer = () => {
-  const user = false; //TODO: connect with database
+  const { user } = useAuth();
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>

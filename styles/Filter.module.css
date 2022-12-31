@@ -1,0 +1,31 @@
+.title {
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--letter-height-regular);
+  letter-spacing: var(--letter-spacing-regular);
+
+  margin-bottom: 12px;
+}
+.options {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.options li {
+  display: flex;
+}
+.options input {
+  cursor: pointer;
+}
+.options label {
+  order: 1;
+  cursor: pointer;
+  padding-left: 8px;
+
+  font-size: var(--font-size-sub-regular);
+  font-weight: var(--font-weight-extra-light);
+  line-height: var(--letter-height-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}

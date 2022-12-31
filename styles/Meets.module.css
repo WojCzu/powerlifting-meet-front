@@ -1,0 +1,38 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.head h1 {
+  font-size: var(--font-size-big);
+  line-height: var(--letter-height-big);
+}
+.results {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-extra-light);
+  line-height: var(--letter-height-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}
+.content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  column-gap: 20px;
+  margin-top: 8px;
+}
+.sidebar {
+  border-radius: 8px;
+  padding: 16px;
+  height: min-content;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  background-color: var(--neutral-50);
+}
+.cardList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}

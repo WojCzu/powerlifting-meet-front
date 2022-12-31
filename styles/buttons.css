@@ -78,6 +78,8 @@
 .btn.btn-tertiary {
   background-color: transparent;
   border: none;
+  box-shadow: none;
+  padding: 0;
   color: var(--secondary-500);
 
   font-size: var(--font-size-small);

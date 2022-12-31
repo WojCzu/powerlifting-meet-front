@@ -9,6 +9,7 @@
 .btn {
   padding: 10px 20px;
   border-radius: 4px;
+  text-align: center;
 
   font-size: var(--font-size-sub-regular);
   font-weight: var(--font-weight-regular);

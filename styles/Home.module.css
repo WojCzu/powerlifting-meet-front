@@ -1,0 +1,17 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.head h2 {
+  font-size: var(--font-size-big);
+  line-height: var(--letter-height-big);
+}
+
+.cardList {
+  margin-top: 16px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}

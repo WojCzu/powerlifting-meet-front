@@ -1,0 +1,46 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.head h1 {
+  font-size: var(--font-size-big);
+  line-height: var(--letter-height-big);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  column-gap: 20px;
+  margin-top: 8px;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  border-radius: 8px;
+  padding: 16px 16px 24px;
+  background-color: var(--neutral-50);
+
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  line-height: var(--letter-height-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}
+.sidebar span {
+  font-weight: var(--font-weight-extra-light);
+}
+.sidebar > div {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.sidebar a {
+  margin-top: 4px;
+}
+.cardList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}

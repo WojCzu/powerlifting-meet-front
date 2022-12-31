@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import styles from "@/styles/Layout.module.css";
 
 const Layout = ({ title, keywords, description, className, children }) => {
+  const classNames = className.split(" ");
   return (
     <div className={styles.layout}>
       <Head>
@@ -12,7 +13,11 @@ const Layout = ({ title, keywords, description, className, children }) => {
         <meta name='keywords' content={keywords} />
       </Head>
       <Header />
-      <main className={`${styles.main} ${className === "bg" ? styles.bg : ""}`}>
+      <main
+        className={`${styles.main} 
+          ${classNames.includes("bg") ? styles.bg : ""} 
+          ${classNames.includes("bg-error") ? styles.error : ""}`}
+      >
         <div className={styles.container}>{children}</div>
       </main>
       <Footer />

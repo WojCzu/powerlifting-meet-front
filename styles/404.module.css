@@ -1,0 +1,13 @@
+.container {
+  color: var(--neutral-50);
+}
+.container div {
+  font-size: 116px;
+  line-height: 116px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-big);
+}
+.container h1 {
+  margin-top: -16px;
+  margin-bottom: 34px;
+}

@@ -19,7 +19,6 @@
   justify-content: center;
   text-align: center;
 }
-
 .main.bg::after {
   content: "";
   position: absolute;
@@ -27,9 +26,11 @@
   background-color: var(--primary-900);
   opacity: 80%;
 }
-
 .main.bg * {
   z-index: 20;
+}
+.main.error {
+  background-image: url("../public/images/background-error.jpg");
 }
 
 .layout {

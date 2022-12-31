@@ -45,7 +45,7 @@ const Card = ({ isCompact, isEditable }) => {
         width={isCompact ? 215 : 300}
         height={210}
         alt='Zdjęcie zawodów trójboju siłowego'
-        src='/../public/images/placeholder.jpg'
+        src='/images/placeholder.jpg'
       />
       <div className={styles.content}>
         <div className={styles.topContainer}>

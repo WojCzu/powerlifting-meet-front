@@ -5,8 +5,15 @@ const MAX_OPTIONS = 4;
 
 const Filter = ({ title, options }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
   const visibleOptions = isExpanded ? options : options.slice(0, MAX_OPTIONS);
+  const buttonText = isExpanded
+    ? "Zobacz mniej"
+    : `Zobacz więcej (${options.length - MAX_OPTIONS})`;
+
+  const handleButtonClick = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <div className={styles.filter}>
       <div className={styles.title}>{title}</div>
@@ -18,12 +25,9 @@ const Filter = ({ title, options }) => {
           </li>
         ))}
       </ul>
-      {visibleOptions.length !== options.length && (
-        <button
-          onClick={() => setIsExpanded(true)}
-          className='btn btn-tertiary'
-        >
-          Zobacz więcej ({options.length - MAX_OPTIONS})
+      {MAX_OPTIONS !== options.length && (
+        <button onClick={handleButtonClick} className='btn btn-tertiary'>
+          {buttonText}
         </button>
       )}
     </div>

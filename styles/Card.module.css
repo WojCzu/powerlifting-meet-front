@@ -66,3 +66,22 @@
   display: flex;
   gap: 8px;
 }
+
+.modal {
+  padding: 0 40px 24px;
+}
+.modalText {
+  padding: 0 25px;
+
+  text-align: center;
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--letter-height-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}
+.modalButtonContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 32px;
+}

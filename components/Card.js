@@ -9,6 +9,7 @@ import ListStyle from "@/icons/list-style.svg";
 import styles from "@/styles/Card.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import Modal from "@/components/Modal";
 
 const mockData = {
   name: "Mistrzostwa Polski Polskiej Unii Trójboju Siłowego",
@@ -30,6 +31,7 @@ const Card = ({ isCompact, isEditable }) => {
     mockData;
   const { user } = useAuth();
   const [isSaved, setIsSaved] = useState(saved);
+  const [isModal, setIsModal] = useState(false);
 
   const handleSave = () => {
     setIsSaved(!isSaved);
@@ -59,7 +61,10 @@ const Card = ({ isCompact, isEditable }) => {
                 <Link href={`/meets/${slug}/edit`} className='icon icon-black'>
                   <EditIcon />
                 </Link>
-                <button className='icon icon-black' onClick={handleDelete}>
+                <button
+                  className='icon icon-black'
+                  onClick={() => setIsModal(true)}
+                >
                   <DeleteIcon />
                 </button>
               </>
@@ -100,6 +105,25 @@ const Card = ({ isCompact, isEditable }) => {
           </Link>
         </div>
       </div>
+
+      <Modal show={isModal} onClose={() => setIsModal(false)}>
+        <div className={styles.modal}>
+          <div className={styles.modalText}>
+            Czy na pewno chcesz trwale usunąć wybrane zawody?
+          </div>
+          <div className={styles.modalButtonContainer}>
+            <button
+              className='btn btn-secondary'
+              onClick={() => setIsModal(false)}
+            >
+              Anuluj
+            </button>
+            <button className='btn' onClick={handleDelete}>
+              Usuń
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

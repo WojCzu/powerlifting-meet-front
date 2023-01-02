@@ -4,7 +4,13 @@ import Header from "@/components/Header";
 import styles from "@/styles/Layout.module.css";
 
 const Layout = ({ title, keywords, description, className, children }) => {
-  const classNames = className.split(" ");
+  const getMainLayoutStyles = className => {
+    const classNames = className.split(" ");
+    const mainClasses = [styles.main];
+    if (classNames.includes("bg")) mainClasses.push(styles.bg);
+    if (classNames.includes("bg-error")) mainClasses.push(styles.error);
+    return mainClasses.join(" ");
+  };
   return (
     <div className={styles.layout}>
       <Head>
@@ -13,11 +19,7 @@ const Layout = ({ title, keywords, description, className, children }) => {
         <meta name='keywords' content={keywords} />
       </Head>
       <Header />
-      <main
-        className={`${styles.main} 
-          ${classNames.includes("bg") ? styles.bg : ""} 
-          ${classNames.includes("bg-error") ? styles.error : ""}`}
-      >
+      <main className={getMainLayoutStyles(className)}>
         <div className={styles.container}>{children}</div>
       </main>
       <Footer />

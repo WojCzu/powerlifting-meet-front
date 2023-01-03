@@ -1,13 +1,15 @@
-.input {
+.input,
+.textarea {
   position: relative;
   margin-top: var(--letter-height-regular);
 }
 
-.input label {
+.input label,
+.textarea label {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  transform: translate(16px, -50%);
+  transform: translate(16px, 12px);
 
   font-size: var(--font-size-sub-regular);
   font-weight: var(--font-weight-extra-light);
@@ -17,12 +19,21 @@
   color: var(--neutral-600);
   transition: transform 0.2s;
 }
+
 .input:has(input:focus) label,
-.input:not(:has(input[value=""])) label {
-  transform: translate(0, -42px);
+.textarea:has(textarea:focus) label,
+.input:not(:has(input[value=""])) label,
+.textarea:has(textarea:not(:empty)) label {
+  transform: translate(0, calc(-1 * var(--letter-height-regular)));
   font-size: var(--font-size-tiny);
 }
-.input input {
+
+.textarea textarea {
+  resize: none;
+  overflow: hidden;
+}
+.input input,
+.textarea textarea {
   width: 100%;
   padding: 12px 16px;
   border-radius: 4px;
@@ -37,12 +48,23 @@
   letter-spacing: var(--letter-spacing-regular);
 }
 
-.input input:hover {
+.input input:hover,
+.textarea textarea:hover {
   border-color: var(--neutral-500);
 }
-.input input:focus {
+.input input:focus,
+.textarea textarea:focus {
   border-color: var(--primary-300);
   box-shadow: var(--highlight-focus);
+}
+
+.input input[type="date"]::-webkit-datetime-edit {
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+}
+.input input[type="date"]:focus::-webkit-datetime-edit,
+.input input:not([value=""])::-webkit-datetime-edit {
+  color: var(--neutral-900) !important;
 }
 
 .input .iconInput {

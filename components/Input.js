@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "@/styles/Input.module.css";
 import ShowPasswordIcon from "@/icons/eye-closed.svg";
 import HidePasswordIcon from "@/icons/eye-open.svg";
 
 const Input = props => {
   if (props.type === "password") return <InputWithIcon {...props} />;
+  if (props.type === "textarea") return <Textarea {...props} />;
   return <InputWithoutIcon {...props} />;
 };
 
@@ -20,6 +21,31 @@ const InputWithoutIcon = ({ id, label, type, ...props }) => (
     <input id={id} type={type} {...props} />
   </div>
 );
+const Textarea = ({ id, label, type, ...props }) => {
+  const textareaRef = useRef();
+
+  useEffect(() => {
+    handleResize();
+  }, []);
+
+  const handleResize = () => {
+    textareaRef.current.style.height = "auto";
+    textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
+  };
+
+  return (
+    <div className={styles.textarea}>
+      <label htmlFor={id}>{label}</label>
+      <textarea
+        id={id}
+        type={type}
+        {...props}
+        onInput={handleResize}
+        ref={textareaRef}
+      />
+    </div>
+  );
+};
 
 const InputWithIcon = ({ id, label, type: defaultType, ...props }) => {
   const [type, setType] = useState(defaultType);
